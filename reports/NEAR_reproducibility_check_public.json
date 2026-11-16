@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "snapshot_utc": "2026-11-12T07:41:41.643402+00:00",
+  "raw_sha256": "6e0316d5609c8d976cfdb91b52d90bdfb052d657fc0c02d68c1869647eee56bd",
+  "input_rows": 857,
+  "dated_rows_within_20min": 857,
+  "timestamp_min_utc": "2026-11-12T07:41:32.281927+00:00",
+  "timestamp_max_utc": "2026-11-12T07:41:38.068731+00:00",
+  "accepted_slices": 9,
+  "accepted_30d_assets": [
+    "AVAX",
+    "HYPE",
+    "SOL"
+  ],
+  "source_slice_statuses_match": true,
+  "max_abs_smile_diff_vol_points": 0.0,
+  "atm_iv_pct": 118.90025903880814,
+  "max_abs_option_premium_diff_usd": 0.0,
+  "quotes_matched": true,
+  "raw_data_in_repository": false,
+  "verification_scope": "Rerun against original local 12-Nov-2026 options snapshot; compared strict SVI outputs and nine-contract quotes to archived reference results.",
+  "limitations": "Checks reproducibility against archived reference only; does not independently validate peer comparability, IV transfer economics, hedge assumptions, or executability. Original raw options chain not distributed."
+}
