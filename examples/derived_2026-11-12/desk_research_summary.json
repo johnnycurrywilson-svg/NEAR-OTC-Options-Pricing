@@ -1,0 +1,326 @@
+{
+  "asof_utc": "2026-11-12T07:41:41.643402+00:00",
+  "research_basis": "12 Nov 2026 recorded live source snapshot; no new invented IV",
+  "spot": 3.51,
+  "rv_7": 0.7357279734340907,
+  "rv_30": 0.9762270012419044,
+  "rv_90": 1.2774085818378855,
+  "fixed_forward_rv": 1.0527289256933412,
+  "peer_relative_adjustment": 0.12944801018456728,
+  "fair_atm_iv": 1.1890025903880814,
+  "experimental_har": {
+    "har_rv_pct": 67.45841455958575,
+    "policy": "experimental, not auto-priced"
+  },
+  "all_forecast_models": {
+    "Trailing RV30": 0.9762270012419044,
+    "Fixed blend": 1.0527289256933412,
+    "Optimised blend": 1.1422038236388392,
+    "EWMA": 1.2017515256425721,
+    "HAR ridge": 0.6745841455958574
+  },
+  "live_peer_iv": [
+    {
+      "asset": "AVAX",
+      "atm30_iv": 0.7066374787394517,
+      "trailing30_rv": 0.6115959102138092,
+      "quality_score": 0.7267543859649123
+    },
+    {
+      "asset": "HYPE",
+      "atm30_iv": 0.6242081866831177,
+      "trailing30_rv": 0.610184965749252,
+      "quality_score": 0.7762613992297818
+    },
+    {
+      "asset": "SOL",
+      "atm30_iv": 0.5698169220848459,
+      "trailing30_rv": 0.4400907077079029,
+      "quality_score": 0.6034943201128768
+    },
+    {
+      "asset": "ZEC",
+      "atm30_iv": 1.1112042466802199,
+      "trailing30_rv": 1.016804640296385,
+      "quality_score": 0.4580000000000001
+    }
+  ],
+  "ticket_quotes": {
+    "ATM call": {
+      "strike": 3.51,
+      "right": "C",
+      "fair_iv_pct": 118.90025903880814,
+      "bid_iv_pct": 113.85833882661629,
+      "offer_iv_pct": 123.942179251,
+      "bid_usd": 0.4550630095874031,
+      "fair_usd": 0.475024047833178,
+      "offer_usd": 0.4949605129224208,
+      "delta": 0.5676672432810795,
+      "gamma": 0.32862303508042445,
+      "vega_usd_per_vol_point": 0.003956611658479558,
+      "execution_cost_usd_per_option_per_side": 0.012035696975722928,
+      "execution_vol_points_per_side": 3.041920212191861,
+      "uncertainty_vol_points_per_side": 1.0,
+      "jump_vol_points_per_side": 1.0,
+      "total_half_spread_vol_points": 5.041920212191862,
+      "total_spread_vol_points": 10.083840424383723,
+      "expected_gross_delta_hedge_turnover_near_per_option": 2.2859823315713066,
+      "execution_bps_per_hedge": 15.0,
+      "assumed_hedges_per_month": 30,
+      "estimated_not_measured": true
+    },
+    "20% OTM covered call": {
+      "strike": 4.212,
+      "right": "C",
+      "fair_iv_pct": 121.16014327082905,
+      "bid_iv_pct": 116.36764597589917,
+      "offer_iv_pct": 125.95264056575893,
+      "bid_usd": 0.23409522060571497,
+      "fair_usd": 0.2520923275049778,
+      "offer_usd": 0.27026522710267753,
+      "delta": 0.36271645671402636,
+      "gamma": 0.30764129111875194,
+      "vega_usd_per_vol_point": 0.003774392206130063,
+      "execution_cost_usd_per_option_per_side": 0.010539980025622635,
+      "execution_vol_points_per_side": 2.792497294929883,
+      "uncertainty_vol_points_per_side": 1.0,
+      "jump_vol_points_per_side": 1.0,
+      "total_half_spread_vol_points": 4.792497294929883,
+      "total_spread_vol_points": 9.584994589859766,
+      "expected_gross_delta_hedge_turnover_near_per_option": 2.0018955414288007,
+      "execution_bps_per_hedge": 15.0,
+      "assumed_hedges_per_month": 30,
+      "estimated_not_measured": true
+    },
+    "15% OTM cash-secured put": {
+      "strike": 2.9835,
+      "right": "P",
+      "fair_iv_pct": 120.98382366782137,
+      "bid_iv_pct": 116.27755532692028,
+      "offer_iv_pct": 125.69009200872246,
+      "bid_usd": 0.21603568332886047,
+      "fair_usd": 0.23135132330829578,
+      "offer_usd": 0.24678045183332187,
+      "delta": -0.2604424533093757,
+      "gamma": 0.26666511600868,
+      "vega_usd_per_vol_point": 0.003266902221523674,
+      "execution_cost_usd_per_option_per_side": 0.00884111405492898,
+      "execution_vol_points_per_side": 2.706268340901097,
+      "uncertainty_vol_points_per_side": 1.0,
+      "jump_vol_points_per_side": 1.0,
+      "total_half_spread_vol_points": 4.706268340901097,
+      "total_spread_vol_points": 9.412536681802194,
+      "expected_gross_delta_hedge_turnover_near_per_option": 1.6792239420567867,
+      "execution_bps_per_hedge": 15.0,
+      "assumed_hedges_per_month": 30,
+      "estimated_not_measured": true
+    }
+  },
+  "tca": [
+    {
+      "scenario": "Low friction",
+      "execution_bps_per_hedge": 8,
+      "rehedges_30d": 12,
+      "spread_vol_points": 6.348284924889729,
+      "dealer_bid_usd": 0.46246037121296624,
+      "dealer_offer_usd": 0.4875779852097595,
+      "execution_cost_usd_per_option_per_side": 0.004645625755625247
+    },
+    {
+      "scenario": "Base case",
+      "execution_bps_per_hedge": 15,
+      "rehedges_30d": 30,
+      "spread_vol_points": 10.083840424383723,
+      "dealer_bid_usd": 0.4550630095874031,
+      "dealer_offer_usd": 0.4949605129224208,
+      "execution_cost_usd_per_option_per_side": 0.012035696975722928
+    },
+    {
+      "scenario": "Stressed",
+      "execution_bps_per_hedge": 30,
+      "rehedges_30d": 60,
+      "spread_vol_points": 19.956135201298707,
+      "dealer_bid_usd": 0.4354978973202617,
+      "dealer_offer_usd": 0.5144539605844687,
+      "execution_cost_usd_per_option_per_side": 0.031566115280867266
+    },
+    {
+      "scenario": "Perp book (single snapshot)",
+      "execution_bps_per_hedge": 11.451965412251344,
+      "rehedges_30d": 30,
+      "spread_vol_points": 8.644795340913262,
+      "dealer_bid_usd": 0.4579130750173155,
+      "dealer_offer_usd": 0.49211696055783505,
+      "execution_cost_usd_per_option_per_side": null,
+      "note": "Measured one-book impact + assumed 5 bps fees + 5 bps slippage, not executable"
+    }
+  ],
+  "extra_research": {
+    "historical_daily": {
+      "status": "ok",
+      "source": "Coinbase NEAR-USD",
+      "observations": 1095,
+      "first_date": "2023-11-13 00:00:00+00:00",
+      "last_date": "2026-11-11 00:00:00+00:00",
+      "file": "near_extended_daily_closes.csv"
+    },
+    "historical_hourly": {
+      "status": "ok",
+      "source": "Coinbase NEAR-USD",
+      "observations": 4320,
+      "first_date": "2026-05-16 00:00:00+00:00",
+      "last_date": "2026-11-11 23:00:00+00:00",
+      "file": "near_hourly_closes.csv"
+    },
+    "perp_book_and_funding": {
+      "status": "ok",
+      "source": "Hyperliquid native NEAR perpetual; snapshot only",
+      "timestamp_observed_utc": "2026-11-12T08:48:03.230310+00:00",
+      "book_time_utc": "2026-11-12T08:47:53.053000+00:00",
+      "best_bid": 3.4675,
+      "best_ask": 3.4676,
+      "best_mid": 3.46755,
+      "quoted_spread_bps": 0.28838805496737185,
+      "rfq_hedge_notional_usd": 20000,
+      "buy_vwap": 3.468053476266525,
+      "sell_vwap": 3.467219084335875,
+      "buy_impact_bps": 1.4519654122513437,
+      "sell_impact_bps": 0.9543212473517304,
+      "mark_px": "3.4676",
+      "oracle_px": "3.469",
+      "funding_rate_now": "0.0000125",
+      "open_interest_contracts": "41736446.400000006",
+      "funding_history_count": 500,
+      "past_30d_funding_sum_pct": 0.4775125300000001,
+      "funding_is_forward_prediction": false,
+      "perp_basis_vs_oracle_bps": -4.035745171518945
+    },
+    "extended_forecast_validation": {
+      "status": "ok",
+      "n_nonoverlap_holdout": 10,
+      "candidate_selected_early": "Optimised blend",
+      "holdout_scores": [
+        {
+          "model": "EWMA",
+          "n": 10,
+          "mae_vol_pts": 39.6,
+          "bias_vol_pts": 0.41
+        },
+        {
+          "model": "Fixed blend",
+          "n": 10,
+          "mae_vol_pts": 39.93,
+          "bias_vol_pts": -1.18
+        },
+        {
+          "model": "HAR ridge",
+          "n": 10,
+          "mae_vol_pts": 36.56,
+          "bias_vol_pts": -0.08
+        },
+        {
+          "model": "Optimised blend",
+          "n": 10,
+          "mae_vol_pts": 39.94,
+          "bias_vol_pts": 2.52
+        },
+        {
+          "model": "Trailing RV30",
+          "n": 10,
+          "mae_vol_pts": 46.23,
+          "bias_vol_pts": -1.73
+        }
+      ],
+      "pricing_policy": "fixed blend until independently validated; never auto-adopt HAR"
+    },
+    "hourly_rv": {
+      "n_hourly_candles": 4320,
+      "source": "Coinbase Exchange NEAR-USD hourly candles",
+      "data_first_utc": "2026-05-16T00:00:00+00:00",
+      "data_last_utc": "2026-11-11T23:00:00+00:00",
+      "close_to_close_hourly_rv_7d_pct": 103.37250881543982,
+      "close_to_close_hourly_rv_30d_pct": 110.88018174229538,
+      "close_to_close_hourly_rv_90d_pct": 125.8896680695765
+    }
+  },
+  "supplemental_assessment": {
+    "use_in_fair_iv": false,
+    "use_in_baseline_quote": false,
+    "policy": "extra feeds are diagnostics and a separate TCA scenario; baseline quote unchanged",
+    "hourly_rv_30_pct": 110.88018174229538,
+    "hourly_method": "Coinbase completed hourly close-to-close returns; annualised sqrt(24*365)",
+    "extended_holdout_scores": [
+      {
+        "model": "EWMA",
+        "n": 10,
+        "mae_vol_pts": 39.6,
+        "bias_vol_pts": 0.41
+      },
+      {
+        "model": "Fixed blend",
+        "n": 10,
+        "mae_vol_pts": 39.93,
+        "bias_vol_pts": -1.18
+      },
+      {
+        "model": "HAR ridge",
+        "n": 10,
+        "mae_vol_pts": 36.56,
+        "bias_vol_pts": -0.08
+      },
+      {
+        "model": "Optimised blend",
+        "n": 10,
+        "mae_vol_pts": 39.94,
+        "bias_vol_pts": 2.52
+      },
+      {
+        "model": "Trailing RV30",
+        "n": 10,
+        "mae_vol_pts": 46.23,
+        "bias_vol_pts": -1.73
+      }
+    ],
+    "nonoverlap_holdout_dates": 10,
+    "perp_tca_status": "indicative_book_informed_scenario",
+    "book_informed_tca": {
+      "source": "Hyperliquid native NEAR perpetual; snapshot only",
+      "observation_time_utc": "2026-11-12T08:47:53.053000+00:00",
+      "hedge_notional_usd": 20000.0,
+      "buy_impact_bps_including_spread": 1.4519654122513437,
+      "sell_impact_bps_including_spread": 0.9543212473517304,
+      "worse_direction_impact_bps": 1.4519654122513437,
+      "assumed_fee_bps": 5.0,
+      "assumed_extra_slippage_bps": 5.0,
+      "cost_bps_per_rehedge": 11.451965412251344,
+      "hedges_in_30d_assumed": 30,
+      "atm_bid_usd": 0.4579130750173155,
+      "atm_offer_usd": 0.49211696055783505,
+      "full_spread_vol_pts": 8.644795340913262,
+      "last_30d_observed_funding_sum_pct": 0.4775125300000001,
+      "perp_basis_vs_oracle_bps": -4.035745171518945,
+      "status_note": "one L2 snapshot; NOT a calibrated 30-day execution cost, not executable option spread; baseline price unchanged"
+    }
+  },
+  "historical_trade_archive": {
+    "attempted": false,
+    "reason": "Optional historical backfill not run; 11 previously qualified observations retained as research context"
+  },
+  "historical_iv_future_rv_reference": {
+    "n": 11,
+    "source": "Deribit historical option trade IV near-ATM proxy (NOT a historical bid/ask mid); plus forward-collected current market snapshots",
+    "mean_iv_minus_future_rv_pts": -5.576054175906049,
+    "median_iv_minus_future_rv_pts": -2.994792066469154,
+    "assets": [
+      "AVAX",
+      "HYPE",
+      "SOL"
+    ],
+    "positive_spread_fraction": 0.36363636363636365,
+    "mean_variance_spread": -0.07770922004480263,
+    "limitations": "Actual traded option IV, not historical two-sided marks; overlapping weekly windows, market regime and selection bias. No profitability inference."
+  },
+  "model_validation_warning": "25 overlapping holdout outcomes, HAR bias, no independent validation; no automatic HAR deployment",
+  "pricing_assumptions": "Black-76 European USD cash settlement, zero forward basis/carry and interest, delta-neutral inventory, trading friction 15 bps/rebalance and 30 hedge trades/month",
+  "wing_calibration": "Wing IV offsets from the 12 Nov exported surface are shifted to the fixed-blend ATM; no fresh SVI refit in offline mode"
+}

@@ -1,0 +1,388 @@
+{
+  "mode": "live",
+  "asof": "2026-11-12T07:41:41.643402+00:00",
+  "source": "Derive / Deribit public market data",
+  "venue_status": {
+    "derive": "OK: 359 nodes",
+    "deribit": "OK: 498 nodes"
+  },
+  "venue_assets": {
+    "derive": [
+      "HYPE",
+      "SOL",
+      "ZEC"
+    ],
+    "deribit": [
+      "AVAX",
+      "HYPE",
+      "SOL"
+    ]
+  },
+  "near_spot": 3.51,
+  "near_rv_30": 0.9762270012419044,
+  "near_forward_rv_30": 0.6745841455958574,
+  "forward_forecast": {
+    "forecast_rv": 0.6745841455958574,
+    "weights": {
+      "7": 0.2,
+      "30": 0.45,
+      "90": 0.35
+    },
+    "rv_inputs": {
+      "30": 0.9762270012419044,
+      "7": 0.7357279734340907,
+      "90": 1.2774085818378855
+    },
+    "method": "walk-forward gated: HAR ridge",
+    "assumptions": "Earlier dates select a candidate; later holdout is an acceptance gate, not untouched final validation. Overlapping outcomes; no option IV information used.",
+    "fixed_blend_reference": 1.0527289256933412,
+    "selection_basis": "early walk-forward selection; later holdout as adoption gate"
+  },
+  "near_forecast_model_comparison": {
+    "selected_method": "HAR ridge",
+    "selected_by": "lowest MAE on earlier walk-forward dates",
+    "deployed_method": "HAR ridge",
+    "deployment_gate_passed": true,
+    "deployment_policy": "Early winner must beat old fixed blend on later holdout by >=1 vol point and >=5% MAE, otherwise deploy fixed blend. Holdout is an acceptance filter, not untouched confirmation.",
+    "forecast_rv": 0.6745841455958574,
+    "live_model_forecasts": {
+      "Trailing RV30": 0.9762270012419044,
+      "Fixed blend": 1.0527289256933412,
+      "Optimised blend": 1.1422038236388392,
+      "EWMA": 1.2017515256425721,
+      "HAR ridge": 0.6745841455958574
+    },
+    "live_optimised_blend_weights": [
+      0.3,
+      0.0,
+      0.7
+    ],
+    "live_ewma_lambda": 0.985,
+    "selection_dates": 37,
+    "holdout_dates": 25,
+    "selection_end_utc": "2026-04-16",
+    "holdout_start_utc": "2026-04-23",
+    "holdout_selected_mae_vol_points": 29.610971889215698,
+    "holdout_fixed_mae_vol_points": 42.80422548598881,
+    "holdout_trailing30_mae_vol_points": 51.34609741165439,
+    "holdout_improvement_vs_fixed_vol_points": 13.193253596773111,
+    "holdout_improvement_vs_trailing_vol_points": 21.735125522438693,
+    "horizon_days": 30,
+    "step_days": 7,
+    "min_matured_training_samples": 20,
+    "note": "Weekly overlapping 30-day outcomes; compact sample, regime-dependent; selection vs later holdout is descriptive, not a confidence interval. This forecasts REALISED volatility, not options IV."
+  },
+  "near_rv_forecast_backtest": {
+    "n": 86,
+    "mae_vol_points": 28.776299157503715,
+    "mean_error_vol_points": 0.5135131849566245,
+    "note": "rolling weekly forecast, overlapping 30d future windows, not option IV backtest"
+  },
+  "historical_iv_forward_evaluation": {
+    "n": 11,
+    "source": "Deribit historical option trade IV near-ATM proxy (NOT a historical bid/ask mid); plus forward-collected current market snapshots",
+    "mean_iv_minus_future_rv_pts": -5.576054175906049,
+    "median_iv_minus_future_rv_pts": -2.994792066469154,
+    "assets": [
+      "AVAX",
+      "HYPE",
+      "SOL"
+    ],
+    "positive_spread_fraction": 0.36363636363636365,
+    "mean_variance_spread": -0.07770922004480263,
+    "limitations": "Actual traded option IV, not historical two-sided marks; overlapping weekly windows, market regime and selection bias. No profitability inference."
+  },
+  "historical_deribit_backfill": {
+    "attempted": false,
+    "status": "not_requested",
+    "qualified_observations": 0,
+    "successful_windows": 0,
+    "partial_windows_rejected": 0,
+    "error_windows": 0
+  },
+  "vrp_ratio": 0.12944801018456728,
+  "near_atm_iv_30": 0.7619077209452976,
+  "weights": {
+    "HYPE": 0.398515,
+    "SOL": 0.258184,
+    "ZEC": 0.156751,
+    "AVAX": 0.18655
+  },
+  "arbitrage_flags": [],
+  "premium_source": "peer-calibrated: quality-weighted Huber estimate of current IV30 / trailing RV30",
+  "premium_method": {
+    "premium_ratio": 0.12944801018456728,
+    "log_premium": 0.12172902681349025,
+    "weighted_mean_ratio": 0.13253675526922673,
+    "simple_median_ratio": 0.12368409596683134,
+    "leave_one_out_min": 0.0868252211470144,
+    "leave_one_out_max": 0.18367452805851614,
+    "leave_one_out": [
+      {
+        "excluded_asset": "AVAX",
+        "ratio_without_asset": 0.11444094975861681,
+        "log_without_asset": 0.10835288882289268
+      },
+      {
+        "excluded_asset": "HYPE",
+        "ratio_without_asset": 0.18367452805851614,
+        "log_without_asset": 0.16862360682965638
+      },
+      {
+        "excluded_asset": "SOL",
+        "ratio_without_asset": 0.0868252211470144,
+        "log_without_asset": 0.08326080509781408
+      },
+      {
+        "excluded_asset": "ZEC",
+        "ratio_without_asset": 0.1408453025654203,
+        "log_without_asset": 0.13176948111437228
+      }
+    ],
+    "n_assets": 4,
+    "method": "quality-weighted Huber M-estimator of log(IV30 / trailing RV30), 0.125 log clipping",
+    "warning": "Small contemporaneous sample, NOT a forward IV risk premium. LOO range is sensitivity, not confidence interval."
+  },
+  "premium_peer_count": 4,
+  "premium_peer_rows": [
+    {
+      "asof_utc": "2026-11-12T07:41:41.643402+00:00",
+      "asset": "AVAX",
+      "venues": "deribit",
+      "atm30_iv": 0.7066374787394517,
+      "trailing30_rv": 0.6115959102138092,
+      "iv_minus_rv_vol_points": 9.50415685256425,
+      "iv_rv_ratio": 1.1553992872392111,
+      "relative_premium": 0.15539928723921115,
+      "log_iv_rv_ratio": 0.1444459874695731,
+      "quality_score": 0.7267543859649123,
+      "last_close_day": "2026-11-11",
+      "quote_status": "observed IV vs TRAILING RV (not future performance)"
+    },
+    {
+      "asof_utc": "2026-11-12T07:41:41.643402+00:00",
+      "asset": "HYPE",
+      "venues": "deribit,derive",
+      "atm30_iv": 0.6242081866831177,
+      "trailing30_rv": 0.610184965749252,
+      "iv_minus_rv_vol_points": 1.4023220933865765,
+      "iv_rv_ratio": 1.0229819181412418,
+      "relative_premium": 0.02298191814124184,
+      "log_iv_rv_ratio": 0.0227218114870247,
+      "quality_score": 0.7762613992297818,
+      "last_close_day": "2026-11-11",
+      "quote_status": "observed IV vs TRAILING RV (not future performance)"
+    },
+    {
+      "asof_utc": "2026-11-12T07:41:41.643402+00:00",
+      "asset": "SOL",
+      "venues": "deribit,derive",
+      "atm30_iv": 0.5698169220848459,
+      "trailing30_rv": 0.4400907077079029,
+      "iv_minus_rv_vol_points": 12.972621437694304,
+      "iv_rv_ratio": 1.2947715371055846,
+      "relative_premium": 0.29477153710558457,
+      "log_iv_rv_ratio": 0.2583342603643125,
+      "quality_score": 0.6034943201128768,
+      "last_close_day": "2026-11-11",
+      "quote_status": "observed IV vs TRAILING RV (not future performance)"
+    },
+    {
+      "asof_utc": "2026-11-12T07:41:41.643402+00:00",
+      "asset": "ZEC",
+      "venues": "derive",
+      "atm30_iv": 1.1112042466802199,
+      "trailing30_rv": 1.016804640296385,
+      "iv_minus_rv_vol_points": 9.439960638383482,
+      "iv_rv_ratio": 1.0928394724441055,
+      "relative_premium": 0.09283947244410551,
+      "log_iv_rv_ratio": 0.08877932964701774,
+      "quality_score": 0.4580000000000001,
+      "last_close_day": "2026-11-11",
+      "quote_status": "observed IV vs TRAILING RV (not future performance)"
+    }
+  ],
+  "premium_archive": "[local development path omitted]",
+  "historical_forward_eval_rows": 11,
+  "peer_history_errors": {},
+  "spread_vol_pts": 10.007151908089531,
+  "spread_mode": "cost / risk assumption-based, symmetric by side",
+  "hedge_cost_assumptions": {
+    "fee_bps": 5.0,
+    "half_spread_bps": 5.0,
+    "slippage_bps": 5.0,
+    "hedges_per_month": 30,
+    "uncertainty_vol_pts": 1.0,
+    "jump_vol_pts": 1.0
+  },
+  "quoting_policy": "neutral two-way: same fair IV mid; cost/risk half width on each side; inventory tilt zero",
+  "option_tickets": {
+    "ATM call": {
+      "spot": 3.51,
+      "forward": 3.51,
+      "strike": 3.51,
+      "days": 30,
+      "right": "C",
+      "iv": 0.7619077209452976,
+      "bid_iv": 0.7118719614048499,
+      "ask_iv": 0.8119434804857453,
+      "bid": 0.28528574818705277,
+      "mid": 0.3052608083596884,
+      "ask": 0.3252202274278795,
+      "fwd_delta": 0.5434844456352832,
+      "spot_delta": 0.5434844456352832,
+      "gamma_spot": 0.5172448966358344,
+      "vega_per_1volpt": 0.003990627694850974,
+      "outside_fit_range": false,
+      "spread_vol_pts": 10.007151908089531,
+      "half_width_vol_pts": 5.0035759540447655,
+      "cost_vol_pts_per_side": 3.0035759540447655,
+      "uncertainty_vol_pts_per_side": 1.0,
+      "jump_vol_pts_per_side": 1.0,
+      "initial_hedge_near_per_option": 0.5434844456352832,
+      "expected_dynamic_hedge_turnover_near_per_option": 1.733087897346574,
+      "execution_cost_usd_per_option_side": 0.011986153385799477,
+      "hedge_trades_assumed": 30,
+      "assumptions_are_observed": false
+    },
+    "20% OTM covered call": {
+      "spot": 3.51,
+      "forward": 3.51,
+      "strike": 4.212,
+      "days": 30,
+      "right": "C",
+      "iv": 0.7845065632655065,
+      "bid_iv": 0.7375825329252883,
+      "ask_iv": 0.8314305936057247,
+      "bid": 0.08717306334033981,
+      "mid": 0.10163716943474621,
+      "ask": 0.11667151472877146,
+      "fwd_delta": 0.24253137420614806,
+      "spot_delta": 0.24253137420614806,
+      "gamma_spot": 0.39604239954981646,
+      "vega_per_1volpt": 0.0031461605974473124,
+      "outside_fit_range": false,
+      "spread_vol_pts": 9.384806068043641,
+      "half_width_vol_pts": 4.692403034021821,
+      "cost_vol_pts_per_side": 2.692403034021821,
+      "uncertainty_vol_pts_per_side": 1.0,
+      "jump_vol_pts_per_side": 1.0,
+      "initial_hedge_near_per_option": 0.24253137420614806,
+      "expected_dynamic_hedge_turnover_near_per_option": 1.3663446634172234,
+      "execution_cost_usd_per_option_side": 0.00847073233808705,
+      "hedge_trades_assumed": 30,
+      "assumptions_are_observed": false
+    },
+    "15% OTM cash-secured put": {
+      "spot": 3.51,
+      "forward": 3.51,
+      "strike": 2.9835,
+      "days": 30,
+      "right": "P",
+      "iv": 0.7827433672354298,
+      "bid_iv": 0.736129417864144,
+      "ask_iv": 0.8293573166067156,
+      "bid": 0.08623296046584483,
+      "mid": 0.09921067978705034,
+      "ask": 0.11259141045233578,
+      "fwd_delta": -0.20145862388279473,
+      "spot_delta": -0.20145862388279473,
+      "gamma_spot": 0.35698714423747796,
+      "vega_per_1volpt": 0.0028295319100300614,
+      "outside_fit_range": false,
+      "spread_vol_pts": 9.322789874257172,
+      "half_width_vol_pts": 4.661394937128586,
+      "cost_vol_pts_per_side": 2.6613949371285863,
+      "uncertainty_vol_pts_per_side": 1.0,
+      "jump_vol_pts_per_side": 1.0,
+      "initial_hedge_near_per_option": 0.20145862388279473,
+      "expected_dynamic_hedge_turnover_near_per_option": 1.2288361339135556,
+      "execution_cost_usd_per_option_side": 0.007530501899797784,
+      "hedge_trades_assumed": 30,
+      "assumptions_are_observed": false
+    }
+  },
+  "kraken_history": {
+    "source": "Kraken public REST NEAR/USD",
+    "spot_asof_utc": "2026-11-12T07:41:41.643983+00:00",
+    "last_complete_daily_candle_utc": "2026-11-11",
+    "candles_count": 720
+  },
+  "historical_vol_windows": [
+    {
+      "lookback_days": 7,
+      "realized_vol_decimal": 0.7357279734340907,
+      "realized_vol_percent": 73.57279734340906
+    },
+    {
+      "lookback_days": 14,
+      "realized_vol_decimal": 1.1577970213855435,
+      "realized_vol_percent": 115.77970213855436
+    },
+    {
+      "lookback_days": 30,
+      "realized_vol_decimal": 0.9762270012419044,
+      "realized_vol_percent": 97.62270012419044
+    },
+    {
+      "lookback_days": 60,
+      "realized_vol_decimal": 1.4268083891875571,
+      "realized_vol_percent": 142.6808389187557
+    },
+    {
+      "lookback_days": 90,
+      "realized_vol_decimal": 1.2774085818378855,
+      "realized_vol_percent": 127.74085818378855
+    }
+  ],
+  "disclaimer": "Indicative research prototype. NOT executable market quote.",
+  "market_update": {
+    "type": "full_live_refresh",
+    "spot_asof_utc": "2026-11-12T07:41:41.643983+00:00",
+    "last_complete_close_utc": "2026-11-11",
+    "returns": {
+      "return_1d_pct": -1.9991065445610912,
+      "return_7d_pct": -3.95928530385532,
+      "return_30d_pct": -30.301826846703726,
+      "return_90d_pct": 114.1157811260904
+    },
+    "reference_date_utc": "2026-10-30T15:49:02.509951+00:00",
+    "reference_spot": 4.2826,
+    "spot_change_from_reference_pct": -18.040442721711123,
+    "reference_near_atm30_iv": 1.4550813776322455,
+    "iv_change_from_reference_vol_pts": -69.31736566869479,
+    "reference_near_forward_rv30": 1.3195806058492756,
+    "rv_forecast_change_vol_pts": -64.49964602534182,
+    "peer_iv_comparison": [
+      {
+        "asset": "AVAX",
+        "current_atm30_iv_pct": 70.66374787394517,
+        "reference_atm30_iv_pct": 68.72370690151782,
+        "change_iv_vol_pts": 1.9400409724273593,
+        "source_note": "peer ATM derived from asset-level fitted Derive/Deribit sources; quote mix can differ"
+      },
+      {
+        "asset": "HYPE",
+        "current_atm30_iv_pct": 62.420818668311775,
+        "reference_atm30_iv_pct": 64.04029230277911,
+        "change_iv_vol_pts": -1.6194736344673277,
+        "source_note": "peer ATM derived from asset-level fitted Derive/Deribit sources; quote mix can differ"
+      },
+      {
+        "asset": "SOL",
+        "current_atm30_iv_pct": 56.98169220848459,
+        "reference_atm30_iv_pct": 61.12430833571851,
+        "change_iv_vol_pts": -4.142616127233922,
+        "source_note": "peer ATM derived from asset-level fitted Derive/Deribit sources; quote mix can differ"
+      },
+      {
+        "asset": "ZEC",
+        "current_atm30_iv_pct": 111.12042466802198,
+        "reference_atm30_iv_pct": 109.55872799568267,
+        "change_iv_vol_pts": 1.5616966723393189,
+        "source_note": "peer ATM derived from asset-level fitted Derive/Deribit sources; quote mix can differ"
+      }
+    ],
+    "cautions": "Peer composition and options quote quality can change. Historical 30 Oct inputs are frozen reference, not current marks."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "selected_method": "HAR ridge",
+  "selected_by": "lowest MAE on earlier walk-forward dates",
+  "deployed_method": "HAR ridge",
+  "deployment_gate_passed": true,
+  "deployment_policy": "Early winner must beat old fixed blend on later holdout by >=1 vol point and >=5% MAE, otherwise deploy fixed blend. Holdout is an acceptance filter, not untouched confirmation.",
+  "forecast_rv": 0.6745841455958574,
+  "live_model_forecasts": {
+    "Trailing RV30": 0.9762270012419044,
+    "Fixed blend": 1.0527289256933412,
+    "Optimised blend": 1.1422038236388392,
+    "EWMA": 1.2017515256425721,
+    "HAR ridge": 0.6745841455958574
+  },
+  "live_optimised_blend_weights": [
+    0.3,
+    0.0,
+    0.7
+  ],
+  "live_ewma_lambda": 0.985,
+  "selection_dates": 37,
+  "holdout_dates": 25,
+  "selection_end_utc": "2026-04-16",
+  "holdout_start_utc": "2026-04-23",
+  "holdout_selected_mae_vol_points": 29.610971889215698,
+  "holdout_fixed_mae_vol_points": 42.80422548598881,
+  "holdout_trailing30_mae_vol_points": 51.34609741165439,
+  "holdout_improvement_vs_fixed_vol_points": 13.193253596773111,
+  "holdout_improvement_vs_trailing_vol_points": 21.735125522438693,
+  "horizon_days": 30,
+  "step_days": 7,
+  "min_matured_training_samples": 20,
+  "note": "Weekly overlapping 30-day outcomes; compact sample, regime-dependent; selection vs later holdout is descriptive, not a confidence interval. This forecasts REALISED volatility, not options IV."
+}

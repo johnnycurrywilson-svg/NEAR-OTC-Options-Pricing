@@ -1,0 +1,11 @@
+segment,method,n_nonoverlap,mae_vol_points,bias_vol_points,note
+selection,EWMA,14,19.61014067094894,-5.624997840300323,descriptive; one chronological split and small nonoverlapping sample
+selection,Fixed blend,14,20.00044976585745,-6.487844152085181,descriptive; one chronological split and small nonoverlapping sample
+selection,HAR ridge,14,23.254077333051065,9.057978336005757,descriptive; one chronological split and small nonoverlapping sample
+selection,Optimised blend,14,19.531749970009308,-7.251686853744537,descriptive; one chronological split and small nonoverlapping sample
+selection,Trailing RV30,14,19.181880923614937,-5.5023164284726676,descriptive; one chronological split and small nonoverlapping sample
+holdout,EWMA,10,39.604751763162,0.4099365241421495,descriptive; one chronological split and small nonoverlapping sample
+holdout,Fixed blend,10,39.9299243737868,-1.1790578925410347,descriptive; one chronological split and small nonoverlapping sample
+holdout,HAR ridge,10,36.55971939329331,-0.0782125568333882,descriptive; one chronological split and small nonoverlapping sample
+holdout,Optimised blend,10,39.93603405323229,2.5220986768166673,descriptive; one chronological split and small nonoverlapping sample
+holdout,Trailing RV30,10,46.22652616186535,-1.7343098647144857,descriptive; one chronological split and small nonoverlapping sample

@@ -1,0 +1,13 @@
+asset,venue,expiry,dte,two_sided_rows,distinct_strikes,put_wing_min_log_k,call_wing_max_log_k,status,reason,rmse_vol_pts,strict_status,strict_reason
+AVAX,deribit,2026-11-27,15.0,8,8,-0.367,0.407,accepted,,0.321,accepted,
+AVAX,deribit,2026-12-25,43.0,8,8,-0.371,0.402,accepted,,0.036,accepted,
+HYPE,deribit,2026-11-27,15.0,32,32,-0.358,0.43,accepted,,0.202,accepted,
+HYPE,deribit,2026-12-25,43.0,38,37,-0.405,0.425,accepted,,0.102,accepted,
+HYPE,derive,2026-11-27,15.0,21,21,-0.357,0.431,accepted,,3.535,rejected,SVI residual above tighter desk threshold
+HYPE,derive,2026-12-25,43.0,34,34,-0.446,0.426,accepted,,0.623,accepted,
+SOL,deribit,2026-11-27,15.0,46,45,-0.26,0.326,accepted,,0.969,accepted,
+SOL,deribit,2026-12-25,43.0,46,46,-0.415,0.445,accepted,,0.421,accepted,
+SOL,derive,2026-11-27,15.0,13,13,-0.168,0.42,accepted,,0.655,accepted,
+SOL,derive,2026-12-25,43.0,21,21,-0.324,0.401,accepted,,0.685,accepted,
+ZEC,derive,2026-11-27,15.0,5,5,-0.208,0.382,rejected,fewer than 8 two-sided strike observations,,rejected,fewer than 8 two-sided strike observations
+ZEC,derive,2026-12-25,43.0,9,9,-0.353,0.408,accepted,,3.023,rejected,SVI residual above tighter desk threshold

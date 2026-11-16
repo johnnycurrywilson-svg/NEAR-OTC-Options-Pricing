@@ -1,0 +1,26 @@
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Credentials and local configuration
+.env
+.env.*
+*.pem
+*.key
+secrets.json
+credentials.json
+
+# Local generated outputs and downloaded exchange data
+outputs/
+*.log
+.DS_Store
+Thumbs.db
+
+# Personal workstation metadata
+.vscode/
+.idea/
